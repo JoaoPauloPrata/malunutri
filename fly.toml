@@ -1,0 +1,37 @@
+# Fly.io — custo mínimo: 1 máquina shared-cpu-1x/256 MB que desliga quando ociosa.
+# Deploy: fly deploy --ha=false  (sem --ha=false o Fly cria 2 máquinas)
+app = "malu-nutri"
+primary_region = "gru"
+# swap em disco evita OOM em picos do .NET sem pagar por mais RAM
+swap_size_mb = 512
+
+[build]
+  dockerfile = "Dockerfile"
+
+  [build.args]
+    VITE_SUPABASE_URL = "https://nkjjyxirvrcsmqijjoft.supabase.co"
+    VITE_SUPABASE_PUBLISHABLE_KEY = "sb_publishable_Ao6G2E1gDODlqY7AbBgobg_iPmwYVk7"
+
+[env]
+  ASPNETCORE_ENVIRONMENT = "Production"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 0
+
+  [[http_service.checks]]
+    grace_period = "15s"
+    interval = "30s"
+    method = "GET"
+    path = "/health"
+    timeout = "5s"
+
+[deploy]
+  strategy = "immediate"
+
+[[vm]]
+  size = "shared-cpu-1x"
+  memory = "256mb"

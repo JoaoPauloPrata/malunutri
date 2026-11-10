@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#F4F0E6"/>
+  <g fill="none" stroke="#4E5638" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+    <!-- borboleta da marca, em traço fino -->
+    <path d="M256 180v170"/>
+    <path d="M256 200c-30-62-108-86-128-50-20 36 30 92 128 96"/>
+    <path d="M256 200c30-62 108-86 128-50 20 36-30 92-128 96"/>
+    <path d="M256 250c-28 18-84 44-90 78-6 34 52 40 90-28"/>
+    <path d="M256 250c28 18 84 44 90 78 6 34-52 40-90-28"/>
+    <path d="M256 180c-8-24-20-38-34-46M256 180c8-24 20-38 34-46"/>
+  </g>
+</svg>

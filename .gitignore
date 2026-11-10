@@ -1,0 +1,23 @@
+# .NET
+bin/
+obj/
+*.user
+.vs/
+
+# Node / Vite
+node_modules/
+dist/
+dev-dist/
+
+# Segredos
+.env
+.env.local
+.env.*.local
+**/appsettings.Development.local.json
+
+# Supabase CLI
+supabase/.temp/
+supabase/.branches/
+
+# Credenciais de teste
+*.local.txt

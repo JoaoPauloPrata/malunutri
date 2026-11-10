@@ -1,0 +1,72 @@
+@import 'tailwindcss';
+
+/* Paleta inspirada na identidade da Malu Lage: papel creme, verde-oliva, sálvia,
+   marrom (barra lateral) e terracota (ações principais). */
+@theme {
+  --color-paper: #f4f0e6;
+  --color-surface: #fbf9f4;
+  --color-sand: #efe7d8;
+  --color-line: #e2d9c7;
+  --color-ink: #2e3226;
+  --color-muted: #66675a;
+  --color-olive: #6b7340;
+  --color-olive-deep: #4e5638;
+  --color-olive-soft: #e3e5d2;
+  --color-sage: #a9b496;
+  --color-sage-soft: #dce1d0;
+  --color-brown: #5e3e2e;
+  --color-brown-soft: #8a6a58;
+  --color-terracotta: #a9472f;
+  --color-terracotta-dark: #8f3a25;
+  --color-terracotta-soft: #f3ddd3;
+  --color-highlight: #f3e7a6;
+
+  --font-display: 'Lora', Georgia, serif;
+  --font-sans: 'Jost', system-ui, sans-serif;
+  --font-hand: 'Caveat', cursive;
+
+  --radius-card: 1.25rem;
+  --shadow-soft: 0 1px 2px rgb(46 50 38 / 0.04), 0 8px 24px -12px rgb(46 50 38 / 0.12);
+}
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-paper font-sans text-ink antialiased;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  h1, h2, h3 {
+    @apply font-display text-olive-deep;
+    text-wrap: balance;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-olive);
+    outline-offset: 2px;
+  }
+  ::selection {
+    background: var(--color-sage-soft);
+  }
+}
+
+@layer components {
+  /* rótulo em caixa alta espaçada, como "NO MEU PLANO" / "PENDÊNCIAS" */
+  .eyebrow {
+    @apply text-[0.72rem] font-medium uppercase tracking-[0.18em] text-muted;
+  }
+  .card {
+    @apply rounded-[var(--radius-card)] border border-line bg-surface shadow-[var(--shadow-soft)];
+  }
+  .pb-safe {
+    padding-bottom: calc(env(safe-area-inset-bottom) + 5.5rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

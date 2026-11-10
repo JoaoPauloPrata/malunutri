@@ -1,0 +1,12 @@
+**/node_modules
+**/dist
+**/bin
+**/obj
+**/.vs
+**/.vscode
+**/.env
+**/.env.*
+**/appsettings.Development.json
+.git
+.claude
+design-system

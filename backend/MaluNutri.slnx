@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/MaluNutri.Api/MaluNutri.Api.csproj" />
+    <Project Path="src/MaluNutri.Application/MaluNutri.Application.csproj" />
+    <Project Path="src/MaluNutri.Domain/MaluNutri.Domain.csproj" />
+    <Project Path="src/MaluNutri.Infrastructure/MaluNutri.Infrastructure.csproj" />
+  </Folder>
+</Solution>
